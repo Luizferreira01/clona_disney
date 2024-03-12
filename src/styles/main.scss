@@ -1,5 +1,36 @@
-$bgcolor: rgb(226, 212, 212);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$CorDeFundo: #040714;
+$CorTextoPrincipal: silver;
+$CorTextoSecundario: #f9f9f9;
 
 body {
-    background-color: $bgcolor;
+    background-color: $CorDeFundo;
+}
+
+@mixin text($fontSize: 16px) {
+    font-Size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: $CorTextoPrincipal;
+}
+
+@mixin title($fontSize: 28px) {
+    @include text($fontSize);
+    color: $CorTextoSecundario;
+}
+
+.text--big {
+    @include text(18px);
+}
+
+.text {
+    @include text;
+}
+
+.text--small {
+    @include text(12px);
 }
